@@ -1,0 +1,448 @@
+Script started on Mon Apr  2 14:58:11 2018
+[?1034h[[32m#1#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mls[K[Kcd sr[Kcripts/
+[[32m#2#[31madmin@[36m /var/www/tianshi/node/porsche/porsche/scripts]
+$[mls
+[31minit.js[39;49m[0m     [31mporsche.sql[39;49m[0m
+[[32m#3#[31madmin@[36m /var/www/tianshi/node/porsche/porsche/scripts]
+$[msudo vim .p[K[Kporsche.sql 
+Password:
+[?2004h[?1049h[?1h=[?2004h[1;41r[?12h[?12l[27m[29m[m[H[2J[?25l[40;1H"porsche.sql" 377L, 15314C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;1H[1m porsche.sql [m[7m                                                                                                                                                       [m[2;1H[38;5;130m  1 [m# ************************************************************
+[38;5;130m  2 [m# Sequel Pro SQL [36mdump[m
+[38;5;130m  3 [m# Version [31m4541[m
+[38;5;130m  4 [m#
+[38;5;130m  5 [m# http://www.sequelpro.com/
+[38;5;130m  6 [m# https://github.com/sequelpro/sequelpro
+[38;5;130m  7 [m#
+[38;5;130m  8 [m# Host: [31m127.0[m.[31m0.1[m (MySQL [31m5.7[m.[31m18[m)
+[38;5;130m  9 [m# Database: pors
+[38;5;130m 10 [m# Generation Time: [31m2017-12-28[m [31m05[m:[31m39[m:[31m26[m +[31m0000[m
+[38;5;130m 11 [m# ************************************************************
+[38;5;130m 12 
+ 13 
+ 14 [m[34m/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */[m;
+[38;5;130m 15 [m[34m/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */[m;
+[38;5;130m 16 [m[34m/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */[m;
+[38;5;130m 17 [m[34m/*!40101 SET NAMES utf8 */[m;
+[38;5;130m 18 [m[34m/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */[m;
+[38;5;130m 19 [m[34m/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */[m;
+[38;5;130m 20 [m[34m/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */[m;
+[38;5;130m 21 
+ 22 
+ 23 [m# [36mDump[m [35mof[m [35mtable[m tb_address
+[38;5;130m 24 [m# [34m------------------------------------------------------------[m
+[38;5;130m 25 
+ 26 DROP[m [35mTABLE[m [35mIF[m [38;5;130mEXISTS[m `tb_address`;
+[38;5;130m 27 [m[34m-- 地址表[m
+[38;5;130m 28 CREATE[m [35mTABLE[m `tb_address` (
+[38;5;130m 29 [m  `id` int([31m10[m) [38;5;130mNOT[m [35mNULL[m,
+[38;5;130m 30 [m  `name` [32mvarchar[m([31m64[m) [38;5;130mNOT[m [35mNULL[m,  [34m-- 省份或者城市名字[m
+[38;5;130m 31 [m  `oid` [32mvarchar[m([31m64[m) [35mDEFAULT[m [35mNULL[m,  [34m-- 显示顺序ID   [m
+[38;5;130m 32 [m  `parent_id` int([31m10[m) [35mDEFAULT[m [35mNULL[m, [34m-- 父ID[m
+[38;5;130m 33 [m  `py` [32mvarchar[m([31m64[m) [38;5;130mNOT[m [35mNULL[m,   [34m-- 省份或者城市名字拼音简称[m
+[38;5;130m 34 [m  `pinyin` [32mvarchar[m([31m64[m) [38;5;130mNOT[m [35mNULL[m, [34m-- 省份或者城市名字拼音[m
+[38;5;130m 35 [m  PRIMARY KEY (`id`)
+[38;5;130m 36 [m) ENGINE=InnoDB [35mDEFAULT[m CHARSET=utf8;
+[38;5;130m 37 [m
+[1m[7m /private/var/www/tianshi/node/porsche/porsche/scripts/porsche.sql   CWD: /private/var/www/tianshi/node/porsche/porsche/scripts   Line: 1/377:1                     [2;5H[?25h[?25l[m[40;1H[K[40;1H:[?2004h[?25h/[?25l[?25hf[?25l[?25hi[?25l[?25hr[?25l[?25hs[?25l[?25ht[?25l[?25h_[?25l[?25ht[?25l[?25hy[?25l[?25hp[?25l[?25he[?25l[?25h[?25l[27m[29m[m[H[2J[1;1H[1m porsche.sql [m[7m                                                                                                                                                       [m[2;1H[38;5;130m 88 
+ 89 [m# [36mDump[m [35mof[m [35mtable[m tb_article
+[38;5;130m 90 [m# [34m------------------------------------------------------------[m
+[38;5;130m 91 
+ 92 DROP[m [35mTABLE[m [35mIF[m [38;5;130mEXISTS[m `tb_article`;
+[38;5;130m 93 [m[34m-- 挚享者说 挚享FM 线下活动 极致驾客 表(统称为文章)[m
+[38;5;130m 94 CREATE[m [35mTABLE[m `tb_article` (
+[38;5;130m 95 [m  `id` int([31m11[m) unsigned [38;5;130mNOT[m [35mNULL[m AUTO_INCREMENT,
+[38;5;130m 96 [m  `uuid` [32mvarchar[m([31m200[m) [35mDEFAULT[m [35mNULL[m, [34m-- 文章唯一ID[m
+[38;5;130m 97 [m  `user_id` [32mvarchar[m([31m200[m) [35mDEFAULT[m [35mNULL[m,[34m-- 用户ID[m
+[38;5;130m 98 [m  `title` [32mvarchar[m([31m500[m) [35mDEFAULT[m [35mNULL[m, [34m-- 文章标题[m
+[38;5;130m 99 [m  `content` text,[20C[34m-- 文章内容[m
+[38;5;130m100 [m  `picture_path` [32mvarchar[m([31m100[m) [35mDEFAULT[m [35mNULL[m, [34m-- 图片路径[m
+[38;5;130m101 [m  `start_time` bigint([31m20[m) [35mDEFAULT[m [35mNULL[m, [34m-- 活动(挚享FM，线下活动)开始时间 [m
+[38;5;130m102 [m  `end_time` bigint([31m20[m) [35mDEFAULT[m [35mNULL[m,[34m-- 活动(挚享FM，线下活动)结束时间 [m
+[38;5;130m103 [m  `address` [32mvarchar[m([31m200[m) [35mDEFAULT[m [35mNULL[m,[34m-- 活动地址[m
+[38;5;130m104 [m  `created_time` bigint([31m20[m) [35mDEFAULT[m [35mNULL[m,[34m-- 活动创建时间[m
+[38;5;130m105 [m  `status` [32mvarchar[m([31m20[m) [35mDEFAULT[m [35mNULL[m, [34m-- 活动状态(REVIEW和ENABLED)[m
+[38;5;130m106 [m  `[103mfirst_type[m` [32mvarchar[m([31m20[m) [35mDEFAULT[m [35mNULL[m, [34m-- 第一大类  MEMBERSHOW(挚享者说)，FM(挚享FM)，OFFLINE(线下活动)，DRIVER(极致驾客)[m
+[38;5;130m107 [m  `second_type` [32mvarchar[m([31m20[m) [35mDEFAULT[m [35mNULL[m,[34m-- 第二大类  MEMBERSHOW-PROJECTION(光影放映厅)，TRACK(燃情赛道)，MODELSTREET(911模型街)；FM-CONTENT(文章详情)           [m[22;1H[38;5;130m    [m[34mREVIEW(活动回顾) ACTIVITY(活动参与)；OFFLINE-OFFLINE；DRIVER-DRIVER[m
+[38;5;130m108 [m  `city` [32mvarchar[m([31m50[m) [35mDEFAULT[m [35mNULL[m,[34m-- 活动城市 [m
+[38;5;130m109 [m  `visit_count` int([31m11[m) [35mDEFAULT[m [35mNULL[m,[34m-- 访问浏览人数[m
+[38;5;130m110 [m  `join_count` int([31m11[m) [35mDEFAULT[m [35mNULL[m,[34m-- 参与人数[m
+[38;5;130m111 [m  `upvote_count` int([31m11[m) [35mDEFAULT[m [35mNULL[m,[34m-- 投票(点赞，感兴趣)人数 [m
+[38;5;130m112 [m  `user_type` [32mvarchar[m([31m20[m) [35mDEFAULT[m [35mNULL[m,[34m-- 用户类型--会员，管理员(MEMBER,MANAGER)[m
+[38;5;130m113 [m  `stay_at_top` int([31m0[m) [35mDEFAULT[m [35m'[m[31m0[m[35m'[m,[34m-- 是否置顶 1-为置顶 0-为不置顶[m
+[38;5;130m114 [m  PRIMARY KEY (`id`)
+[38;5;130m115 [m) ENGINE=InnoDB [35mDEFAULT[m CHARSET=utf8;
+[38;5;130m116 
+117 
+118 
+119 [m# [36mDump[m [35mof[m [35mtable[m tb_article_comment
+[38;5;130m120 [m# [34m------------------------------------------------------------[m
+[38;5;130m121 
+122 DROP[m [35mTABLE[m [35mIF[m [38;5;130mEXISTS[m `tb_article_comment`;
+[38;5;130m123 [m[34m-- 挚享者说 挚享FM 线下活动 极致驾客 评论列表(文章评论列表）[m
+[1m[7m /private/var/www/tianshi/node/porsche/porsche/scripts/porsche.sql   CWD: /private/var/www/tianshi/node/porsche/porsche/scripts   Line: 106/377:3                   [20;7H[?25h[?25l[40;1H[m:[?2004h[?25hq[?25l[?25h[?25l
+[?2004l[40;1H[K[41;1H[?2004l[?1l>[?25h[?1049l[[32m#4#[31madmin@[36m /var/www/tianshi/node/porsche/porsche/scripts]
+$[mcd ..
+[[32m#5#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mls
+[31mUserArticle.md[39;49m[0m    [31mdeploy.yaml[39;49m[0m       dump.rdb          [31mpackage-lock.json[39;49m[0m [34mscripts[39;49m[0m           [34mstatic[39;49m[0m            typescript
+[31mdatabase.md[39;49m[0m       [31mdoc.md[39;49m[0m            [34mnode_modules[39;49m[0m      [31mpackage.json[39;49m[0m      [34msrc[39;49m[0m               [31mtool.sh[39;49m[0m
+[[32m#6#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mgit [K[K[K[Kgit satus[K[K[K[Ktats[Kus
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .env[m
+	[31mmodified:   src/models/fm.js[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31mdump.rdb[m
+	[31mtypescript[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[[32m#7#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mgit add .[K[K[K[K[K[K[K[K[Kgit stat[K[K[K[Kstatu[K[K[K[K[K[K[K[K[Kti[K[Kgit add .
+[[32m#8#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mgit pu[K[Kcommit -m "sss"
+[master 985d868] sss
+ 4 files changed, 120 insertions(+), 4 deletions(-)
+ create mode 100644 dump.rdb
+ create mode 100644 typescript
+[[32m#9#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mgit pull
+warning: redirecting to http://117.119.73.75:9999/porsche/porsche.git/
+Already up to date.
+[[32m#10#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mgit push
+warning: redirecting to http://117.119.73.75:9999/porsche/porsche.git/
+Counting objects: 8, done.
+Delta compression using up to 8 threads.
+Compressing objects:  12% (1/8)   Compressing objects:  25% (2/8)   Compressing objects:  37% (3/8)   Compressing objects:  50% (4/8)   Compressing objects:  62% (5/8)   Compressing objects:  75% (6/8)   Compressing objects:  87% (7/8)   Compressing objects: 100% (8/8)   Compressing objects: 100% (8/8), done.
+Writing objects:  12% (1/8)   Writing objects:  25% (2/8)   Writing objects:  37% (3/8)   Writing objects:  50% (4/8)   Writing objects:  62% (5/8)   Writing objects:  75% (6/8)   Writing objects:  87% (7/8)   Writing objects: 100% (8/8)   Writing objects: 100% (8/8), 3.71 KiB | 3.71 MiB/s, done.
+Total 8 (delta 5), reused 0 (delta 0)
+To http://117.119.73.75:9999/porsche/porsche
+   b0b8541..985d868  master -> master
+[[32m#11#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mls
+[31mUserArticle.md[39;49m[0m    [31mdeploy.yaml[39;49m[0m       dump.rdb          [31mpackage-lock.json[39;49m[0m [34mscripts[39;49m[0m           [34mstatic[39;49m[0m            typescript
+[31mdatabase.md[39;49m[0m       [31mdoc.md[39;49m[0m            [34mnode_modules[39;49m[0m      [31mpackage.json[39;49m[0m      [34msrc[39;49m[0m               [31mtool.sh[39;49m[0m
+[[32m#12#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mcd ..
+[[32m#13#[31madmin@[36m /var/www/tianshi/node/porsche]
+$[mls
+[34mporsche[39;49m[0m         [34mporsche-admin[39;49m[0m   [34mporsche-web-new[39;49m[0m
+[[32m#14#[31madmin@[36m /var/www/tianshi/node/porsche]
+$[mcd [[Kporsche-web-new/
+[[32m#15#[31madmin@[36m /var/www/tianshi/node/porsche/porsche-web-new]
+$[mgit status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   src/basecom/article.vue[m
+	[31mmodified:   src/basecom/commentfm.vue[m
+	[31mmodified:   src/common/js/config.js[m
+	[31mmodified:   src/routePage/porsche-offline/index.vue[m
+	[31mmodified:   src/routePage/porsche-offline/indexhui.vue[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[[32m#16#[31madmin@[36m /var/www/tianshi/node/porsche/porsche-web-new]
+$[mgit[K[K[Kgit add .
+[[32m#17#[31madmin@[36m /var/www/tianshi/node/porsche/porsche-web-new]
+$[mgit pull
+warning: redirecting to http://117.119.73.75:9999/porsche/porsche-web-new.git/
+Already up to date.
+[[32m#18#[31madmin@[36m /var/www/tianshi/node/porsche/porsche-web-new]
+$[mgit commit -m "ss“
+> 
+[[32m#18#[31madmin@[36m /var/www/tianshi/node/porsche/porsche-web-new]
+$[mgit commit -m "ss“[K”
+> 
+[[32m#18#[31madmin@[36m /var/www/tianshi/node/porsche/porsche-web-new]
+$[mgit commit -m "ss”[K"
+[master 55589209] ss
+ 5 files changed, 7 insertions(+), 7 deletions(-)
+[[32m#19#[31madmin@[36m /var/www/tianshi/node/porsche/porsche-web-new]
+$[mgit pull
+warning: redirecting to http://117.119.73.75:9999/porsche/porsche-web-new.git/
+Already up to date.
+[[32m#20#[31madmin@[36m /var/www/tianshi/node/porsche/porsche-web-new]
+$[mgit push
+warning: redirecting to http://117.119.73.75:9999/porsche/porsche-web-new.git/
+Counting objects: 13, done.
+Delta compression using up to 8 threads.
+Compressing objects:   7% (1/13)   Compressing objects:  15% (2/13)   Compressing objects:  23% (3/13)   Compressing objects:  30% (4/13)   Compressing objects:  38% (5/13)   Compressing objects:  46% (6/13)   Compressing objects:  53% (7/13)   Compressing objects:  61% (8/13)   Compressing objects:  69% (9/13)   Compressing objects:  76% (10/13)   Compressing objects:  84% (11/13)   Compressing objects:  92% (12/13)   Compressing objects: 100% (13/13)   Compressing objects: 100% (13/13), done.
+Writing objects:   7% (1/13)   Writing objects:  15% (2/13)   Writing objects:  23% (3/13)   Writing objects:  30% (4/13)   Writing objects:  38% (5/13)   Writing objects:  46% (6/13)   Writing objects:  53% (7/13)   Writing objects:  61% (8/13)   Writing objects:  69% (9/13)   Writing objects:  76% (10/13)   Writing objects:  84% (11/13)   Writing objects:  92% (12/13)   Writing objects: 100% (13/13)   Writing objects: 100% (13/13), 1.09 KiB | 1.09 MiB/s, done.
+Total 13 (delta 10), reused 0 (delta 0)
+To http://117.119.73.75:9999/porsche/porsche-web-new
+   073b7d56..55589209  master -> master
+[[32m#21#[31madmin@[36m /var/www/tianshi/node/porsche/porsche-web-new]
+$[mgit [K[K[K[Kls
+[31mREADME.md[39;49m[0m         [31mcodefomate.min.js[39;49m[0m [34mconfig[39;49m[0m            [31mindex.html[39;49m[0m        [34mnode_modules[39;49m[0m      [31mpackage.json[39;49m[0m      [34msrc[39;49m[0m               [31mtools.sh[39;49m[0m
+[34mbuild[39;49m[0m             [31mcommit.sh[39;49m[0m         [31mdeploy.sh[39;49m[0m         [31mnetstat[39;49m[0m           [31mpackage-lock.json[39;49m[0m [34mpublic[39;49m[0m            [34mstatic[39;49m[0m
+[[32m#22#[31madmin@[36m /var/www/tianshi/node/porsche/porsche-web-new]
+$[mcd ..
+[[32m#23#[31madmin@[36m /var/www/tianshi/node/porsche]
+$[mcd porsche
+[[32m#24#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mls
+[31mUserArticle.md[39;49m[0m    [31mdeploy.yaml[39;49m[0m       dump.rdb          [31mpackage-lock.json[39;49m[0m [34mscripts[39;49m[0m           [34mstatic[39;49m[0m            typescript
+[31mdatabase.md[39;49m[0m       [31mdoc.md[39;49m[0m            [34mnode_modules[39;49m[0m      [31mpackage.json[39;49m[0m      [34msrc[39;49m[0m               [31mtool.sh[39;49m[0m
+[[32m#25#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[msudo vim .gitignore 
+Password:
+[?2004h[?1049h[?1h=[?2004h[1;41r[?12h[?12l[27m[29m[m[H[2J[?25l[40;1H".gitignore" 4L, 50C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;1H[1m .gitignore [m[7m                                                                                                                                                        [m[2;1H[38;5;130m  1 [m/static/origin
+[38;5;130m  2 [m/static/uploads
+[38;5;130m  3 [m.idea
+[38;5;130m  4 [mnode_modules
+[94m~                                                                                                                                                                   [7;1H~                                                                                                                                                                   [8;1H~                                                                                                                                                                   [9;1H~                                                                                                                                                                   [10;1H~                                                                                                                                                                   [11;1H~                                                                                                                                                                   [12;1H~                                                                                                                                                                   [13;1H~                                                                                                                                                                   [14;1H~                                                                                                                                                                   [15;1H~                                                                                                                                                                   [16;1H~                                                                                                                                                                   [17;1H~                                                                                                                                                                   [18;1H~                                                                                                                                                                   [19;1H~                                                                                                                                                                   [20;1H~                                                                                                                                                                   [21;1H~                                                                                                                                                                   [22;1H~                                                                                                                                                                   [23;1H~                                                                                                                                                                   [24;1H~                                                                                                                                                                   [25;1H~                                                                                                                                                                   [26;1H~                                                                                                                                                                   [27;1H~                                                                                                                                                                   [28;1H~                                                                                                                                                                   [29;1H~                                                                                                                                                                   [30;1H~                                                                                                                                                                   [31;1H~                                                                                                                                                                   [32;1H~                                                                                                                                                                   [33;1H~                                                                                                                                                                   [34;1H~                                                                                                                                                                   [35;1H~                                                                                                                                                                   [36;1H~                                                                                                                                                                   [37;1H~                                                                                                                                                                   [38;1H~                                                                                                                                                                   [m[39;1H[1m[7m /private/var/www/tianshi/node/porsche/porsche/.gitignore   CWD: /private/var/www/tianshi/node/porsche/porsche   Line: 1/4:1                                        [2;5H[?25h[39;120H2/[3;5H[39;120H3/[4;5H[39;120H4/[5;5H[?25l[m[41;1H[1m-- INSERT --[1;2H+g i.gitignore [m[6;1H[38;5;130m  5 [m[6;5H[K[39;58H[1m[7m[+]   CWD: /private/var/www/tianshi/node/porsche/porsche   Line: 5/5:1[6;5H[?25h[?25l[me[39;127H[1m[7m2 [6;6H[?25h[?25l[m[6;5H[K[39;127H[1m[7m1 [6;5H[?25h[?25l[m.[39;127H[1m[7m2 [6;6H[?25h[?25l[me[39;127H[1m[7m3 [6;7H[?25h[?25l[mv[39;127H[1m[7m4 [m[40;1H[K[41;1H[K[40;1H=[?2004hacp#onPopupPost()[40;1H[K[40;1H=[?2004hacp#onPopupPost()[40;1H[K[41;1H[1m-- Keyword completion (^N^P) [m[97m[41mPattern not found[m[41;1H[K[41;1H[1m-- INSERT --[6;8H[?25h[?25l[m[6;7H[K[39;127H[1m[7m3 [6;7H[?25h[?25l[mn[39;127H[1m[7m4 [m[41;1H[K[40;1H=[?2004hacp#onPopupPost()[40;1H[K[40;1H=[?2004hacp#onPopupPost()[40;1H[K[41;1H[1m-- Keyword completion (^N^P) [m[97m[41mPattern not found[m[41;1H[K[41;1H[1m-- INSERT --[6;8H[?25h[?25l[mv[39;127H[1m[7m5 [6;9H[?25h[m[41;1H[K[6;8H[?25l[39;127H[1m[7m4 [6;8H[?25h[?25l[40;1H[m:[?2004h[?25hw[?25l[?25hq[?25l[?25h[?25l[?2004l".gitignore" 5L, 55C written
+
+[?2004l[?1l>[?25h[?1049l[[32m#26#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mls -a
+[34m.[39;49m[0m                 [31m.env.deploy[39;49m[0m       .gitignore        [31mdeploy.yaml[39;49m[0m       [34mnode_modules[39;49m[0m      [34mscripts[39;49m[0m           [31mtool.sh[39;49m[0m
+[34m..[39;49m[0m                [31m.env.deploy_debug[39;49m[0m [31mUserArticle.md[39;49m[0m    [31mdoc.md[39;49m[0m            [31mpackage-lock.json[39;49m[0m [34msrc[39;49m[0m               typescript
+[31m.env[39;49m[0m              [34m.git[39;49m[0m              [31mdatabase.md[39;49m[0m       dump.rdb          [31mpackage.json[39;49m[0m      [34mstatic[39;49m[0m
+[[32m#27#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[msud [K[K[K[Ksudo vim .gitg[Kignore [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Ko git rm -[K--cah[Kched .v[Kenv
+rm '.env'
+[[32m#28#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mgis[Kt status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	[32mdeleted:    .env[m
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .gitignore[m
+	[31mmodified:   typescript[m
+
+[[32m#29#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mgit add .
+[[32m#30#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mgit cpmm[K[K[Kommit -m "ss"
+[master a764e69] ss
+ 3 files changed, 107 insertions(+), 16 deletions(-)
+ delete mode 100755 .env
+[[32m#31#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mgit pull
+warning: redirecting to http://117.119.73.75:9999/porsche/porsche.git/
+Already up to date.
+[[32m#32#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mgit push
+warning: redirecting to http://117.119.73.75:9999/porsche/porsche.git/
+Counting objects: 4, done.
+Delta compression using up to 8 threads.
+Compressing objects:  25% (1/4)   Compressing objects:  50% (2/4)   Compressing objects:  75% (3/4)   Compressing objects: 100% (4/4)   Compressing objects: 100% (4/4), done.
+Writing objects:  25% (1/4)   Writing objects:  50% (2/4)   Writing objects:  75% (3/4)   Writing objects: 100% (4/4)   Writing objects: 100% (4/4), 4.48 KiB | 4.48 MiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0)
+To http://117.119.73.75:9999/porsche/porsche
+   985d868..a764e69  master -> master
+[[32m#33#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mgit status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   typescript[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[[32m#34#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mgit status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   typescript[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[[32m#35#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mcd ../
+[[32m#36#[31madmin@[36m /var/www/tianshi/node/porsche]
+$[mcd porsche-web-new/
+[[32m#37#[31madmin@[36m /var/www/tianshi/node/porsche/porsche-web-new]
+$[mls
+[31mREADME.md[39;49m[0m         [31mcodefomate.min.js[39;49m[0m [34mconfig[39;49m[0m            [31mindex.html[39;49m[0m        [34mnode_modules[39;49m[0m      [31mpackage.json[39;49m[0m      [34msrc[39;49m[0m               [31mtools.sh[39;49m[0m
+[34mbuild[39;49m[0m             [31mcommit.sh[39;49m[0m         [31mdeploy.sh[39;49m[0m         [31mnetstat[39;49m[0m           [31mpackage-lock.json[39;49m[0m [34mpublic[39;49m[0m            [34mstatic[39;49m[0m
+[[32m#38#[31madmin@[36m /var/www/tianshi/node/porsche/porsche-web-new]
+$[mgi[K[Kgi[K[Kgt[K[Kgit[K[K[Kd[Kcd /[K..
+[[32m#39#[31madmin@[36m /var/www/tianshi/node/porsche]
+$[mcd porsche
+[[32m#40#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mls
+[31mUserArticle.md[39;49m[0m    [31mdeploy.yaml[39;49m[0m       dump.rdb          [31mpackage-lock.json[39;49m[0m [34mscripts[39;49m[0m           [34mstatic[39;49m[0m            typescript
+[31mdatabase.md[39;49m[0m       [31mdoc.md[39;49m[0m            [34mnode_modules[39;49m[0m      [31mpackage.json[39;49m[0m      [34msrc[39;49m[0m               [31mtool.sh[39;49m[0m
+[[32m#41#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mcd ..
+[[32m#42#[31madmin@[36m /var/www/tianshi/node/porsche]
+$[mcd porsche-web-new/
+[[32m#43#[31madmin@[36m /var/www/tianshi/node/porsche/porsche-web-new]
+$[mgit status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   src/common/js/config.js[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[[32m#44#[31madmin@[36m /var/www/tianshi/node/porsche/porsche-web-new]
+$[mgit add .
+[[32m#45#[31madmin@[36m /var/www/tianshi/node/porsche/porsche-web-new]
+$[mgti[K[Kit commit -m "sss"
+[master 9a09da89] sss
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[[32m#46#[31madmin@[36m /var/www/tianshi/node/porsche/porsche-web-new]
+$[mgit pull
+warning: redirecting to http://117.119.73.75:9999/porsche/porsche-web-new.git/
+Already up to date.
+[[32m#47#[31madmin@[36m /var/www/tianshi/node/porsche/porsche-web-new]
+$[mgit [K[K[K[Kgit push
+warning: redirecting to http://117.119.73.75:9999/porsche/porsche-web-new.git/
+Counting objects: 6, done.
+Delta compression using up to 8 threads.
+Compressing objects:  16% (1/6)   Compressing objects:  33% (2/6)   Compressing objects:  50% (3/6)   Compressing objects:  66% (4/6)   Compressing objects:  83% (5/6)   Compressing objects: 100% (6/6)   Compressing objects: 100% (6/6), done.
+Writing objects:  16% (1/6)   Writing objects:  33% (2/6)   Writing objects:  50% (3/6)   Writing objects:  66% (4/6)   Writing objects:  83% (5/6)   Writing objects: 100% (6/6)   Writing objects: 100% (6/6), 524 bytes | 524.00 KiB/s, done.
+Total 6 (delta 4), reused 0 (delta 0)
+To http://117.119.73.75:9999/porsche/porsche-web-new
+   55589209..9a09da89  master -> master
+[[32m#48#[31madmin@[36m /var/www/tianshi/node/porsche/porsche-web-new]
+$[mcd ..
+[[32m#49#[31madmin@[36m /var/www/tianshi/node/porsche]
+$[mcd porsche
+[[32m#50#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mls
+[31mUserArticle.md[39;49m[0m    [31mdeploy.yaml[39;49m[0m       dump.rdb          [31mpackage-lock.json[39;49m[0m [34mscripts[39;49m[0m           [34mstatic[39;49m[0m            typescript
+[31mdatabase.md[39;49m[0m       [31mdoc.md[39;49m[0m            [34mnode_modules[39;49m[0m      [31mpackage.json[39;49m[0m      [34msrc[39;49m[0m               [31mtool.sh[39;49m[0m
+[[32m#51#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mgit satu[K[K[K[Kstatus
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   src/models/fm.js[m
+	[31mmodified:   typescript[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[[32m#52#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mgit add .
+[[32m#53#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mgit commit -m "sss"
+[master 6a2db69] sss
+ 2 files changed, 119 insertions(+), 2 deletions(-)
+[[32m#54#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mgit pull
+warning: redirecting to http://117.119.73.75:9999/porsche/porsche.git/
+Already up to date.
+[[32m#55#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mgit push
+warning: redirecting to http://117.119.73.75:9999/porsche/porsche.git/
+Counting objects: 6, done.
+Delta compression using up to 8 threads.
+Compressing objects:  16% (1/6)   Compressing objects:  33% (2/6)   Compressing objects:  50% (3/6)   Compressing objects:  66% (4/6)   Compressing objects:  83% (5/6)   Compressing objects: 100% (6/6)   Compressing objects: 100% (6/6), done.
+Writing objects:  16% (1/6)   Writing objects:  33% (2/6)   Writing objects:  50% (3/6)   Writing objects:  66% (4/6)   Writing objects:  83% (5/6)   Writing objects: 100% (6/6)   Writing objects: 100% (6/6), 1.24 KiB | 1.24 MiB/s, done.
+Total 6 (delta 5), reused 0 (delta 0)
+To http://117.119.73.75:9999/porsche/porsche
+   a764e69..6a2db69  master -> master
+[[32m#56#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mcd ..
+[[32m#57#[31madmin@[36m /var/www/tianshi/node/porsche]
+$[mcd porsche
+[[32m#58#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mls
+[31mUserArticle.md[39;49m[0m    [31mdeploy.yaml[39;49m[0m       dump.rdb          [31mpackage-lock.json[39;49m[0m [34mscripts[39;49m[0m           [34mstatic[39;49m[0m            typescript
+[31mdatabase.md[39;49m[0m       [31mdoc.md[39;49m[0m            [34mnode_modules[39;49m[0m      [31mpackage.json[39;49m[0m      [34msrc[39;49m[0m               [31mtool.sh[39;49m[0m
+[[32m#59#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mcd ..
+[[32m#60#[31madmin@[36m /var/www/tianshi/node/porsche]
+$[mcd porsche-web-new/
+[[32m#61#[31madmin@[36m /var/www/tianshi/node/porsche/porsche-web-new]
+$[mls
+[31mREADME.md[39;49m[0m         [31mcodefomate.min.js[39;49m[0m [34mconfig[39;49m[0m            [31mindex.html[39;49m[0m        [34mnode_modules[39;49m[0m      [31mpackage.json[39;49m[0m      [34msrc[39;49m[0m               [31mtools.sh[39;49m[0m
+[34mbuild[39;49m[0m             [31mcommit.sh[39;49m[0m         [31mdeploy.sh[39;49m[0m         [31mnetstat[39;49m[0m           [31mpackage-lock.json[39;49m[0m [34mpublic[39;49m[0m            [34mstatic[39;49m[0m
+[[32m#62#[31madmin@[36m /var/www/tianshi/node/porsche/porsche-web-new]
+$[mgit sat[Ka[K[Ktatus
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   src/common/js/config.js[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[[32m#63#[31madmin@[36m /var/www/tianshi/node/porsche/porsche-web-new]
+$[mgit add .
+[[32m#64#[31madmin@[36m /var/www/tianshi/node/porsche/porsche-web-new]
+$[mgit comm[K[K[K[K[K[K[K[Kcd ..
+[[32m#65#[31madmin@[36m /var/www/tianshi/node/porsche]
+$[mls
+[34mporsche[39;49m[0m         [34mporsche-admin[39;49m[0m   [34mporsche-web-new[39;49m[0m
+[[32m#66#[31madmin@[36m /var/www/tianshi/node/porsche]
+$[mcd porsche
+[[32m#67#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mls
+[31mUserArticle.md[39;49m[0m    [31mdeploy.yaml[39;49m[0m       dump.rdb          [31mpackage-lock.json[39;49m[0m [34mscripts[39;49m[0m           [34mstatic[39;49m[0m            typescript
+[31mdatabase.md[39;49m[0m       [31mdoc.md[39;49m[0m            [34mnode_modules[39;49m[0m      [31mpackage.json[39;49m[0m      [34msrc[39;49m[0m               [31mtool.sh[39;49m[0m
+[[32m#68#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mgit status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   dump.rdb[m
+	[31mmodified:   src/models/fm.js[m
+	[31mmodified:   typescript[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[[32m#69#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mgit add .
+[[32m#70#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mgit pull[K[K[K[Kcommit -m[Km "ss"
+[master feea0e5] ss
+ 3 files changed, 79 insertions(+), 4 deletions(-)
+[[32m#71#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mgit pull
+warning: redirecting to http://117.119.73.75:9999/porsche/porsche.git/
+Already up to date.
+[[32m#72#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[mgit push
+warning: redirecting to http://117.119.73.75:9999/porsche/porsche.git/
+Counting objects: 7, done.
+Delta compression using up to 8 threads.
+Compressing objects:  14% (1/7)   Compressing objects:  28% (2/7)   Compressing objects:  42% (3/7)   Compressing objects:  57% (4/7)   Compressing objects:  71% (5/7)   Compressing objects:  85% (6/7)   Compressing objects: 100% (7/7)   Compressing objects: 100% (7/7), done.
+Writing objects:  14% (1/7)   Writing objects:  28% (2/7)   Writing objects:  42% (3/7)   Writing objects:  57% (4/7)   Writing objects:  71% (5/7)   Writing objects:  85% (6/7)   Writing objects: 100% (7/7)   Writing objects: 100% (7/7), 1.00 KiB | 1.00 MiB/s, done.
+Total 7 (delta 6), reused 0 (delta 0)
+To http://117.119.73.75:9999/porsche/porsche
+   6a2db69..feea0e5  master -> master
+[[32m#73#[31madmin@[36m /var/www/tianshi/node/porsche/porsche]
+$[m

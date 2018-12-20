@@ -1,0 +1,13 @@
+cfg-inject:
+  - .env.deploy
+run:
+  - npm install
+  # - cp .env.deploy.link  .env.deploy
+service:
+  - name: porsche
+    type: nodejs
+    entrypoint: node src/index.js
+    volume: static/uploads
+    expose:
+      - port: 5001
+        name: web
